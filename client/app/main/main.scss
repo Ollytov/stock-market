@@ -1,34 +1,93 @@
-.thing-form {
-    margin: 20px 0;
+$background: #0099FF;
+$panel: #EEEEEE;
+$secondary: #FFFFFF;
+
+body {
+    background: $background;
 }
 
-#banner {
-    border-bottom: none;
-    margin-top: -20px;
+.wrapper {
+    background: $panel;
+    border: 1px solid #0066CC;
 }
 
-#banner h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+.header {
+    border: 2px solid black;
+    border-radius: 50px;
+    background: $secondary;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 200px;
+    padding-top: 10px;
+    font-family: Georgia;
+    h1 {
+        font-size: 50px;
+    }
+    .lead {
+        font-size: 40px;
+    }
 }
 
-.hero-unit {
-    position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
-}
 
 .footer {
     text-align: center;
     padding: 30px 0;
-    margin-top: 70px;
+    margin-top: 100px;
     border-top: 1px solid #E5E5E5;
+    .foot {
+        display: inline-block;
+        margin-right: 10px;
+    }
 }
 
-.navbar-text {
-  margin-left: 15px;
+
+.stock-info {
+    .stock-sect {
+        margin-top: 10px;
+        .page-header {
+            font-size: 30px;
+            margin-bottom: 10px;
+            margin-top: 30px;
+            border-bottom: 0;
+        }
+        .stock-wrap {
+            padding: 5px;
+            display: block;
+            border: 2px solid black;
+            border-radius: 15px;
+            background: $secondary;
+            .stock-name {
+                background: $secondary;
+                font-size: 23px;
+                text-decoration: none;
+                color: black;
+                &:hover {
+                    text-decoration: none;
+                }
+                .glyphicon-remove {
+                    font-size: 25px;
+                    color: black;
+                    margin-top: 3px;
+                }
+            }
+        }
+    }
+    .search-label {
+        font-size: 22px;
+    }
+    .stock-form {
+        height: 150px;
+        padding-top: 30px;
+        .error-message {
+            font-size: 16px;
+            color: red;
+        }
+    }
+    
+}
+
+
+#chart {
+    height: 400px;
+    min-width: 310px;
 }

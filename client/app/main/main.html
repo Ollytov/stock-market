@@ -1,38 +1,40 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
-
-<header class="hero-unit" id="banner">
+<div class="wrapper col-md-12">
+<header class="header col-md-12 text-center">
   <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+    <h1>Stock Market</h1>
+    <p class="lead">Search the Stock Market Now!</p>
   </div>
 </header>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
-      </ul>
-    </div>
-  </div>
-
-  <form class="thing-form">
-    <label>Syncs in realtime across clients</label>
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
-      </span>
-    </p>
-  </form>
+<div class="row">
+  <div id="chart" class="col-md-12"></div>
 </div>
 
-<footer class="footer">
-  <div class="container">
-      <p>Angular Fullstack v2.1.1 |
-        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+<div class="container col-md-12 stock-info">
+    <div class="col-md-6 stock-sect">
+      <h1 class="page-header text-center">Stocks Added to the Chart:</h1>
+      <ul class="col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6 col-sm-8 col-sm-offset-2" ng-repeat="stock in stockList">
+        <li class="stock-wrap text-center"><a href="#" class="stock-name" tooltip="{{thing.info}}">{{stock.name}}<button type="button" class="close" ng-click="deleteStock(stock)"><i class="glyphicon glyphicon-remove"></i></button></a></li>
+      </ul>
+
+    </div>
+    <div class="col-md-6 stock-sect text-center">
+      <form class="stock-form col-md-10 col-md-offset-1">
+        <label class="search-label">Enter Stock Name To Add To Chart!</label>
+        <p class="input-group">
+          <input type="text" class="form-control" placeholder="Enter A New Stock Name" ng-model="newStock">
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary" ng-click="addStock()">Add New</button>
+          </span>
+          <p class="error-message">{{errormessage}}</p>
+        </p>
+      </form>
+    </div>
+</div>
+
+<!-- <footer class="footer">
+  <div class="container text-center">
+      <p class="foot">Stock Market Application | Daniel Maloof</p>
   </div>
-</footer>
+</footer> -->
+</wrapper>
