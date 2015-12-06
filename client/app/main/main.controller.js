@@ -29,9 +29,7 @@ angular.module('stockMarketApp')
 
     $scope.addStock = function() {
       if($scope.newStock === '' || $scope.newStock === undefined) {
-        console.log("Error was found!");
         $scope.errormessage = "Please enter a stock name in the search form above."
-        console.log($scope.errormessage);
         return;
       }
       angular.forEach($scope.stockNames, function(stock) {
